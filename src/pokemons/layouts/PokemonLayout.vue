@@ -4,6 +4,8 @@
 
 <template>
     <div>
-
+        Pokemon layout
     </div>
+
+    <RouterView />
 </template>
