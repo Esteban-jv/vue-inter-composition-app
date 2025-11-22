@@ -1,12 +1,17 @@
 <script setup lang="ts">
-    import { RouterLink } from 'vue-router';
+    
+    interface Props {
+        title?: string;
+    }
+
+    defineProps<Props>();
 
 </script>
 
 <template>
     <nav>
         <img src="https://th.bing.com/th/id/R.ddd5084dff8d7606019645f62c1712c6?rik=RJm8gtkd41am8Q&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fpokemon-logo-png-pokemon-logo-png-2000.png&ehk=%2bFdpvqx7Vk1jcWsSaxVIqArQSByK89fRtNQoRFktAhY%3d&risl=&pid=ImgRaw&r=0" alt="Pokemon app logo" width="100" height="40">
-        <span>App</span>
+        <span v-if="title">{{ title }}</span>
         <RouterLink to="/">Home</RouterLink>
         <RouterLink to="/about">About</RouterLink>
         <RouterLink to="/counter">Counter</RouterLink>

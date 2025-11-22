@@ -5,7 +5,7 @@
 
 <template>
   <header>
-    <NavBar />
+    <NavBar title="App" />
   </header>
 
   <RouterView />
