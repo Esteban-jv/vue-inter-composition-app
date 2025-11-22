@@ -1,12 +1,4 @@
-<script setup lang="ts">
-import { ref } from 'vue'
-
-const current = ref(10)
-
-const increment = () => {
-  current.value += 1
-}
-</script>
+<script lang="ts" src="./counterView.ts"></script>
 <template>
   <div>
     <h2>Counter View</h2>
