@@ -1,5 +1,5 @@
 <script setup lang="ts">
-  import { RouterLink, RouterView } from 'vue-router'
+  import { RouterView } from 'vue-router'
   import NavBar from '@/shared/components/NavBar.vue'
   import { routerLinks } from '@/router/list-routes'
 </script>
@@ -11,6 +11,11 @@
 
   <Suspense>
     <RouterView />
+
+    <!-- loading state via #fallback slot -->
+    <template #fallback>
+      Loading... <!-- Esto funciona cuando quiere -->
+    </template>
   </Suspense>
 </template>
 
