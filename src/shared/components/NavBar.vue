@@ -1,21 +1,25 @@
 <script setup lang="ts">
-    import { routerLinks } from '@/router/list-routes';
+    import type { RouterLink } from '@/router/list-routes';
     
     interface Props {
         title?: string;
+        links: RouterLink[];
+        isSecondary?: boolean;
     }
 
     withDefaults(defineProps<Props>(), {
-        title: 'App'
+        title: 'App',
+        isSecondary: false,
     });
-
 </script>
 
 <template>
     <nav>
-        <img src="https://th.bing.com/th/id/R.ddd5084dff8d7606019645f62c1712c6?rik=RJm8gtkd41am8Q&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fpokemon-logo-png-pokemon-logo-png-2000.png&ehk=%2bFdpvqx7Vk1jcWsSaxVIqArQSByK89fRtNQoRFktAhY%3d&risl=&pid=ImgRaw&r=0" alt="Pokemon app logo" width="100" height="40">
-        <span v-if="title">{{ title }}</span>
-        <RouterLink v-for="router in routerLinks" :key="router.name" :to="router.path">{{ router.title }}</RouterLink>
+        <template v-if="!isSecondary">
+            <img src="https://th.bing.com/th/id/R.ddd5084dff8d7606019645f62c1712c6?rik=RJm8gtkd41am8Q&riu=http%3a%2f%2fpluspng.com%2fimg-png%2fpokemon-logo-png-pokemon-logo-png-2000.png&ehk=%2bFdpvqx7Vk1jcWsSaxVIqArQSByK89fRtNQoRFktAhY%3d&risl=&pid=ImgRaw&r=0" alt="Pokemon app logo" width="100" height="40">
+            <span v-if="title">{{ title }}</span>
+        </template>
+        <RouterLink v-for="router in links" :key="router.name" :to="router.path">{{ router.title }}</RouterLink>
     </nav>
 </template>
 
@@ -40,12 +44,12 @@
         margin-right: 1rem;
     }
 
-    nav a.router-link-exact-active {
+    nav a.router-link-active {
         font-weight: bold;
         text-decoration: underline;
     }
 
-    nav a.router-link-exact-active:hover {
+    nav a.router-link-active:hover {
         background-color: transparent;
         color: inherit;
     }
