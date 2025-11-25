@@ -17,12 +17,12 @@
 <template>
     <NavBar :links="routes" :is-secondary="true" />
 
-    <Suspense>
+    <!-- <Suspense> -->
     <RouterView />
 
     <!-- loading state via #fallback slot -->
-    <template #fallback>
-      Loading... <!-- Esto funciona cuando quiere -->
+    <!-- <template #fallback>
+      Loading...
     </template>
-  </Suspense>
+  </Suspense> -->
 </template>
