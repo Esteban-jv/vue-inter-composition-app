@@ -9,14 +9,7 @@
     <NavBar :links="routerLinks" />
   </header>
 
-  <Suspense>
-    <RouterView />
-
-    <!-- loading state via #fallback slot -->
-    <template #fallback>
-      Loading... <!-- Esto funciona cuando quiere -->
-    </template>
-  </Suspense>
+  <RouterView />
 </template>
 
 <style scoped></style>
