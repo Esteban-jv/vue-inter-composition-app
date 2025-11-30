@@ -10,9 +10,9 @@ import { sleep } from './sleep'
 export const getPokemons = async (): Promise<Pokemon[]> => {
 
     await sleep(2) // Simulate delay
-    
+
     const pokemonPromises: Promise<Pokemon>[] = []
-    const { data } = await pokemonApi.get<PokemonItemResponse>('/pokemon?limit=5')
+    const { data } = await pokemonApi.get<PokemonItemResponse>('/pokemon?limit=25')
 
     for (const { url } of data.results) {
 
@@ -33,4 +33,3 @@ export const getPokemons = async (): Promise<Pokemon[]> => {
 
     return pokemons
 }
-    
