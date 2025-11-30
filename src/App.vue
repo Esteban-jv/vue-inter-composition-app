@@ -9,7 +9,7 @@
     <NavBar :links="routerLinks" />
   </header>
 
-  <RouterView />
+<RouterView />
 </template>
 
 <style scoped></style>
